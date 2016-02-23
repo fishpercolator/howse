@@ -1,1 +1,43 @@
-%h1 Tell us about who you are
+.row
+  .col-lg-12
+    %h1.centered Tell us about who you are
+.row
+  .col-lg-6.col-lg-offset-3.well
+    %form.form-horizontal{action: '/pages/criteria'}
+      .row.form-group
+        %label.control-label.col-sm-5 Age
+        .col-sm-7
+          %select.form-control{name: 'age'}
+            - ['18-29', '30-49', '50-64', '65-79', '80+'].each do |a|
+              %option= a
+      .row.form-group
+        %label.control-label.col-sm-5 Wheelchair user?
+        .col-sm-7
+          %label.radio-inline
+            %input{type: 'radio', name: 'wheelchair'} Yes
+          %label.radio-inline
+            %input{type: 'radio', name: 'wheelchair', checked: true} No 
+      .row.form-group
+        %label.control-label.col-sm-5 Number of children living with you
+        .col-sm-7
+          %select.form-control{name: 'dependants'}
+            - (0..10).each do |n|
+              %option= n
+      .row.form-group
+        %label.control-label.col-sm-5 Number of children who visit you
+        .col-sm-7
+          %select.form-control{name: 'independants'}
+            - (0..10).each do |n|
+              %option= n
+      .row.form-group
+        %label.control-label.col-sm-5 Priority grouping assigned by council
+        .col-sm-7
+          %select.form-control{name: 'priority'}
+            - ([%{Don't know}] + ('A'..'D').to_a).each do |c|
+              %option= c
+      .row.form-group
+        .col-sm-7.col-sm-offset-5
+          %button.btn.btn-primary{type: 'submit'} Begin
+.row
+  .col-lg-12.centered
+    %em Note: This data could be provided by (e.g.) a sign-in to Orchard

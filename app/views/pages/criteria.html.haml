@@ -1,0 +1,33 @@
+.row
+  .col-lg-12
+    %h1.centered Tell us about what you're looking for
+.row
+  .col-lg-6.col-lg-offset-3.well
+    %form.form-horizontal{action: '/pages/areas'}
+      .row.form-group
+        %label.control-label.col-sm-5 Property type
+        .col-sm-7
+          %label.radio-inline
+            %input{type: 'radio', name: 'type', checked: true} House
+          %label.radio-inline
+            %input{type: 'radio', name: 'type'} Bungalow
+          %label.radio-inline
+            %input{type: 'radio', name: 'type'} Flat
+          %label.radio-inline
+            %input{type: 'radio', name: 'type'} High-rise
+      .row.form-group
+        %label.control-label.col-sm-5 Number of bedrooms
+        .col-sm-7
+          %select.form-control{name: 'bedrooms'}
+            - (1..6).each do |n|
+              %option= n
+      - ['First', 'Second', 'Third'].each do |nth|
+        .row.form-group
+          %label.control-label.col-sm-5= "#{nth} preference location"
+          .col-sm-7
+            %select.form-control{name: "pref-#{nth}"}
+              - %w{Armley Bramley Burley City Headingley Horsforth Kirkstall Yeadon}.each do |area|
+                %option= area
+      .row.form-group
+        .col-sm-7.col-sm-offset-5
+          %button.btn.btn-primary{type: 'submit'} Search

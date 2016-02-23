@@ -14,11 +14,19 @@
  //Import bootstrap-sprockets
  @import "bootstrap-sprockets";
 
- // Import sandstone variables
- @import "bootswatch/sandstone/variables";
+ // Import variables
+ @import "bootswatch/superhero/variables";
 
  // Then bootstrap itself
  @import "bootstrap";
 
 // And finally bootswatch style itself
-@import "bootswatch/sandstone/bootswatch";
+@import "bootswatch/superhero/bootswatch";
+
+.centered {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
