@@ -30,3 +30,27 @@
 h1 {
   margin-bottom: 1em;
 }
+
+.listing img {
+  max-width: 300px;
+}
+
+.listing h2 a {
+  color: white;
+}
+
+.rating {
+  margin: 5px;
+}
+
+.gold {
+  background-color: #cca300;
+}
+
+.silver {
+  background-color: #737373;
+}
+
+.bronze {
+  background-color: #cc6600;
+}
