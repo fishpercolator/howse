@@ -1,12 +1,19 @@
-.row
-  .col-lg-12
-    %h1.centered These areas are good matches for you
-= render partial: 'pages/area', collection: areas, locals: {council: params[:council]}
-.row.clear-top
-  .col-lg-4.col-lg-offset-4
-    - if params[:council] == 'true'
-      %a.btn.btn-default.centered{href: url_for(params.merge(council: false))}
-        Switch to user mode
-    - else
-      %a.btn.btn-default.centered{href: url_for(params.merge(council: true))}
-        Switch to council mode
+- if params[:bedrooms].to_i >= 4
+  .row
+    .col-lg-4.col-lg-offset-4
+      %h1.centered Sorry!
+      %p Leeds City Council is unable to house people in your situation in houses containing #{params[:bedrooms]} bedrooms. Please adjust your search.
+      %p= link_to "Back", :back, class: 'btn btn-default'
+- else
+  .row
+    .col-lg-12
+      %h1.centered These areas are good matches for you
+  = render partial: 'pages/area', collection: areas, locals: {council: params[:council]}
+  .row.clear-top
+    .col-lg-4.col-lg-offset-4
+      - if params[:council] == 'true'
+        %a.btn.btn-default.centered{href: url_for(params.merge(council: false))}
+          Switch to user mode
+      - else
+        %a.btn.btn-default.centered{href: url_for(params.merge(council: true))}
+          Switch to council mode
