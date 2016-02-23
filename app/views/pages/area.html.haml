@@ -1,0 +1,12 @@
+.row
+  .col-lg-12
+    %h1.centered
+      Properties available for bids in
+      = params[:area]
+= render partial: 'pages/home', collection: properties_in(params[:area])
+.row.clear-top
+  .col-lg-4.col-lg-offset-4
+    %a.btn.btn-default.centered{href: 'https://fishpercolator.co.uk/presentations/gsohome/'}
+      Find out more about
+      = params[:area]
+      at GSOH

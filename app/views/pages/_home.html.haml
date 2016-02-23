@@ -1,0 +1,20 @@
+.row.listing
+  .col-lg-3.col-lg-offset-2
+    %img{src: home[:pic]}
+  .col-lg-5
+    %h2= home[:name]
+    - if home[:accessible]
+      %button.btn-default
+        %img{src: '/disabled.png'}
+        Accessible home
+    %p Last time this home was allocated:
+    %ul
+      %li
+        Tenant had been waiting
+        %b= home[:waited]
+      %li
+        Tenant was classified as priority
+        %b= home[:priority]
+      %li
+        %b= home[:bids]
+        people bid on this home
