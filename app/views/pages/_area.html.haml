@@ -4,11 +4,19 @@
       %img{src: area[:pic]}
   .col-lg-5
     %h2= link_to area[:name], "/pages/area?area=#{area[:name]}"
-    %button.btn.btn-default.rating{class: area[:rating]}
-      %span.glyphicon.glyphicon-star
-      = area[:rating]
+    - if council != 'true'
+      %button.btn.btn-default.rating{class: area[:rating]}
+        %span.glyphicon.glyphicon-star
+        = area[:rating]
     %ul
+      - if council == 'true'
+        %li
+          Area is usually assigned to priority
+          %b= area[:priority]
+        %li
+          Users bidding on area
+          %b= area[:users]
       %li
-        People like you are housed in roughly
+        People like #{council == 'true' ? 'user' : 'you'} are housed in roughly
         %b= area[:time]
       %li= "Location: #{area[:location]}"
