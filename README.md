@@ -60,5 +60,14 @@ If the user picks search criteria that are incompatible with their needs (e.g. i
 
 ## Implementation challenges
 
+The hardest part of this challenge would be the matching algorithm that determines whether a given area is 'gold/silver/bronze'. This algorithm needs to analyse historical data for a given demographic in that area and allocate the category based on the wait time / number of bids for all houses in that area over the last few years.
+
+Another challenge will be getting all of the data from Leeds Homes into the site, which will require some sort of API or periodic dump from the existing database.
+
 ## Future
 
+There are lots of areas where this tool could be improved following a pilot. The most interesting involve linking the user to their actual case in Orchard and using this to present them with more information about their previous (and current) bids and why they may have been unsuccessful.
+
+## Any questions
+
+Please contact me at <rich@fishpercolator.co.uk> with any questions!
